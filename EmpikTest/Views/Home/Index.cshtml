@@ -1,0 +1,29 @@
+﻿<div class="row" ng-app="DirectoryApp">
+
+    <div class="col-md-4" ng-controller="NavController">
+    <table class="table table-condensed">
+        <thead>
+        <th class="active">Less 10Mb</th>
+        <th class="success">10Mb-50Mb</th>
+        <th class="warning">More 100</th>
+        </thead>
+        <tr>
+            <td class="active">{{amounts[0]}}</td>
+            <td class="success">{{amounts[1]}}</td>
+            <td class="warning">{{amounts[2]}}</td>
+        </tr>
+    </table>
+    <ul>
+        <li ng-repeat="message in messages" class="userMessage">{{message}}</li>
+    </ul>
+    <h3 class="bg-info">Текущая дериктория: {{currentPath}}</h3>
+    <div class="list-group">
+        <a ng-repeat="item in filelist" class="list-group-item" ng-click="navigate(item)">{{item.title}}</a>
+    </div>
+    </div>
+</div>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/app")
+}
